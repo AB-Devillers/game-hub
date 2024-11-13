@@ -3,13 +3,13 @@ import Navbar from "./Componants/Navbar";
 
 function App() {
   return (
-    <div className="bg-[#151515]">
+    <div className="bg-[#151515] min-h-screen">
       <nav>
         <Navbar />
       </nav>
-      <div className="grid md:grid-cols-2">
-        <aside className=" hidden text-white md:block">aside</aside>
-        <main className="">
+      <div className="grid lg:grid-cols-[25%_75%] p-4">
+        <aside className="hidden text-white lg:block">aside</aside>
+        <main className="w-full flex justify-center">
           <GamesGrid />
         </main>
       </div>
