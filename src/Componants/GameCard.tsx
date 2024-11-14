@@ -11,7 +11,6 @@ const GameCard = ({ game }: props) => {
     <div
       className="w-full bg-blackish2 rounded-lg shadow-lg overflow-hidden mb-3 mx-auto
           sm:w-smCard 
-          md:w-mdCard 
           lg:w-lgCard "
     >
       <img

@@ -1,5 +1,6 @@
 import GamesGrid from "./Componants/GamesGrid";
 import Navbar from "./Componants/Navbar";
+import SideBar from "./Componants/SideBar";
 
 function App() {
   return (
@@ -8,7 +9,9 @@ function App() {
         <Navbar />
       </nav>
       <div className="grid lg:grid-cols-oneAndThree p-4">
-        <aside className="hidden text-white lg:block">aside</aside>
+        <aside className="hidden text-white lg:block">
+          <SideBar />
+        </aside>
         <main className="w-full flex justify-center">
           <GamesGrid />
         </main>

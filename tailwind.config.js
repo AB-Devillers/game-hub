@@ -7,7 +7,7 @@ export default {
         "lg-custom": "1000px",
       },
       gridTemplateColumns: {
-        oneAndThree: "25% 75%",
+        oneAndThree: "20% 80%",
       },
       colors: {
         blackish: "#151515",
