@@ -5,9 +5,16 @@ interface props {
 }
 const GameCard = ({ game }: props) => {
   return (
-    <div className="w-full sm:w-[300px] md:w-[350px] bg-[#1f1f1f] rounded-lg shadow-lg overflow-hidden mb-3 mx-auto lg:w-[230px] ">
+    <div
+      className="w-full 
+          sm:w-smCard 
+          md:w-mdCard bg-blackish2 rounded-lg shadow-lg overflow-hidden mb-3 mx-auto 
+          lg:w-lgCard "
+    >
       <img
-        className="w-full h-[200px] sm:h-[250px] md:h-[300px] object-cover"
+        className="w-full h-[200px] 
+        sm:h-smImg
+        md:h-smCard object-cover"
         src={game.background_image}
         alt={game.name}
       />
