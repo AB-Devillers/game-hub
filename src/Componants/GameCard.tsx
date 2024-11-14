@@ -1,4 +1,5 @@
 import { Game } from "../hooks/useGame";
+import getCroppedImageUrl from "../services/getCroppedImageUrl";
 import CriticScore from "./CriticScore";
 import PlatformIconList from "./PlatformIconList";
 
@@ -17,7 +18,7 @@ const GameCard = ({ game }: props) => {
         className="w-full h-[200px] 
         sm:h-smImg
         md:h-smCard object-cover"
-        src={game.background_image}
+        src={getCroppedImageUrl(game.background_image)}
         alt={game.name}
       />
       <div className="p-4">
