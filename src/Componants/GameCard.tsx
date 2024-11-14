@@ -9,9 +9,9 @@ interface props {
 const GameCard = ({ game }: props) => {
   return (
     <div
-      className="w-full 
+      className="w-full bg-blackish2 rounded-lg shadow-lg overflow-hidden mb-3 mx-auto
           sm:w-smCard 
-          md:w-mdCard bg-blackish2 rounded-lg shadow-lg overflow-hidden mb-3 mx-auto 
+          md:w-mdCard 
           lg:w-lgCard "
     >
       <img
