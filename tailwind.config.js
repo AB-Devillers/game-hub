@@ -16,7 +16,9 @@ export default {
       width: {
         smCard: "300px",
         mdCard: "350px",
-        lgCard: "230px",
+        tablet: "320px",
+        laptop: "240px !important",
+        lgCard: "260px",
         smImg: "250px",
       },
     },

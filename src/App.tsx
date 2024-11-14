@@ -1,6 +1,6 @@
 import GamesGrid from "./Componants/GamesGrid";
+import GenreList from "./Componants/GenreList";
 import Navbar from "./Componants/Navbar";
-import SideBar from "./Componants/SideBar";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       </nav>
       <div className="grid lg:grid-cols-oneAndThree p-4">
         <aside className="hidden text-white lg:block">
-          <SideBar />
+          <GenreList />
         </aside>
         <main className="w-full flex justify-center">
           <GamesGrid />

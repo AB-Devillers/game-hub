@@ -10,8 +10,9 @@ const GameCard = ({ game }: props) => {
   return (
     <div
       className="w-full bg-blackish2 rounded-lg shadow-lg overflow-hidden mb-3 mx-auto
-          sm:w-smCard 
-          lg:w-lgCard "
+    lg:w-lgCard
+      md:w-laptop
+      sm:w-tablet "
     >
       <img
         className="w-full h-[200px] 
