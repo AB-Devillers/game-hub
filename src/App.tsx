@@ -4,10 +4,13 @@ import GenreList from "./Componants/GenreList";
 import Navbar from "./Componants/Navbar";
 import { Genre } from "./hooks/useGenre";
 import PlatformSelector from "./Componants/PlatformSelector";
+import { Platform } from "./hooks/usePlatform";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
-
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
+    null
+  );
   return (
     <div className="bg-blackish min-h-screen">
       <nav>
@@ -21,8 +24,13 @@ function App() {
           />
         </aside>
         <main className="w-full mx-auto">
-          <PlatformSelector />
-          <GamesGrid selectedGenre={selectedGenre} />
+          <PlatformSelector
+            onSelectPlatform={(plateform) => setSelectedPlatform(plateform)}
+          />
+          <GamesGrid
+            selectedPlatform={selectedPlatform}
+            selectedGenre={selectedGenre}
+          />
         </main>
       </div>
     </div>
