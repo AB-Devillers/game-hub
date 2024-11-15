@@ -6,11 +6,13 @@ import { Genre } from "./hooks/useGenre";
 import PlatformSelector from "./Componants/PlatformSelector";
 import { Platform } from "./hooks/usePlatform";
 
+export interface GameQuery {
+  genre: Genre | null;
+  platform: Platform | null;
+}
+
 function App() {
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
-  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
-    null
-  );
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
   return (
     <div className="bg-blackish min-h-screen">
       <nav>
@@ -19,18 +21,17 @@ function App() {
       <div className="grid lg:grid-cols-oneAndThree p-4">
         <aside className="hidden text-white lg:block">
           <GenreList
-            selectedGenre={selectedGenre}
-            onSelectGenre={(genre) => setSelectedGenre(genre)}
+            selectedGenre={gameQuery.genre}
+            onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
           />
         </aside>
         <main className="w-full mx-auto">
           <PlatformSelector
-            onSelectPlatform={(plateform) => setSelectedPlatform(plateform)}
+            onSelectPlatform={(platform) =>
+              setGameQuery({ ...gameQuery, platform })
+            }
           />
-          <GamesGrid
-            selectedPlatform={selectedPlatform}
-            selectedGenre={selectedGenre}
-          />
+          <GamesGrid gameQuery={gameQuery} />
         </main>
       </div>
     </div>

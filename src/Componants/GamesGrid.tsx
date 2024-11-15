@@ -1,16 +1,14 @@
+import { GameQuery } from "../App";
 import useGame from "../hooks/useGame";
-import { Genre } from "../hooks/useGenre";
-import { Platform } from "../hooks/usePlatform";
 import CardSkeleton from "./CardSkeleton";
 import GameCard from "./GameCard";
 
 interface props {
-  selectedGenre: Genre | null;
-  selectedPlatform: Platform | null;
+  gameQuery: GameQuery;
 }
 
-const GamesGrid = ({ selectedGenre, selectedPlatform }: props) => {
-  const { data, error, loading } = useGame(selectedGenre, selectedPlatform);
+const GamesGrid = ({ gameQuery }: props) => {
+  const { data, error, loading } = useGame(gameQuery);
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
     <>
