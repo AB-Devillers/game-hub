@@ -3,6 +3,7 @@ import GamesGrid from "./Componants/GamesGrid";
 import GenreList from "./Componants/GenreList";
 import Navbar from "./Componants/Navbar";
 import { Genre } from "./hooks/useGenre";
+import PlatformSelector from "./Componants/PlatformSelector";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
@@ -19,7 +20,8 @@ function App() {
             onSelectGenre={(genre) => setSelectedGenre(genre)}
           />
         </aside>
-        <main className="w-full flex justify-center">
+        <main className="w-full mx-auto">
+          <PlatformSelector />
           <GamesGrid selectedGenre={selectedGenre} />
         </main>
       </div>
