@@ -1,6 +1,7 @@
 import { Game } from "../hooks/useGame";
 import getCroppedImageUrl from "../services/getCroppedImageUrl";
 import CriticScore from "./CriticScore";
+import Emoji from "./Emoji";
 import PlatformIconList from "./PlatformIconList";
 
 interface props {
@@ -22,7 +23,6 @@ const GameCard = ({ game }: props) => {
         alt={game.name}
       />
       <div className="p-4">
-        <h2 className="text-xl font-semibold text-white mb-2">{game.name}</h2>
         <div className="flex justify-between">
           <div className="w-9/12">
             <PlatformIconList
@@ -31,6 +31,8 @@ const GameCard = ({ game }: props) => {
           </div>
           <CriticScore score={game.metacritic} />
         </div>
+        <h2 className="text-xl font-semibold text-white mt-4">{game.name}</h2>
+        <Emoji rating={game.rating_top} />
       </div>
     </div>
   );
