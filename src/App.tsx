@@ -5,6 +5,7 @@ import Navbar from "./Componants/Navbar";
 import { Genre } from "./hooks/useGenre";
 import PlatformSelector from "./Componants/PlatformSelector";
 import { Platform } from "./hooks/usePlatform";
+import SortSelector from "./Componants/SortSelector";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -25,12 +26,17 @@ function App() {
             onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
           />
         </aside>
-        <main className="w-full mx-auto">
-          <PlatformSelector
-            onSelectPlatform={(platform) =>
-              setGameQuery({ ...gameQuery, platform })
-            }
-          />
+        <main className="w-full mx-auto ">
+          <div className="mx-7 flex items-center">
+            <PlatformSelector
+              onSelectPlatform={(platform) =>
+                setGameQuery({ ...gameQuery, platform })
+              }
+            />
+            <span className="ml-6">
+              <SortSelector />
+            </span>
+          </div>
           <GamesGrid gameQuery={gameQuery} />
         </main>
       </div>
