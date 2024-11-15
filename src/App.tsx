@@ -6,6 +6,7 @@ import { Genre } from "./hooks/useGenre";
 import PlatformSelector from "./Componants/PlatformSelector";
 import { Platform } from "./hooks/usePlatform";
 import SortSelector from "./Componants/SortSelector";
+import GameHeading from "./Componants/GameHeading";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -31,7 +32,8 @@ function App() {
           />
         </aside>
         <main className="w-full mx-auto ">
-          <div className="mx-7 flex items-center flex-wrap  cen">
+          <GameHeading gameQuery={gameQuery} />
+          <div className="ml-9 flex items-center flex-wrap  cen">
             <div className="mb-3">
               <PlatformSelector
                 onSelectPlatform={(platform) =>
