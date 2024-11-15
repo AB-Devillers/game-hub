@@ -28,13 +28,15 @@ function App() {
           />
         </aside>
         <main className="w-full mx-auto ">
-          <div className="mx-7 flex items-center">
-            <PlatformSelector
-              onSelectPlatform={(platform) =>
-                setGameQuery({ ...gameQuery, platform })
-              }
-            />
-            <span className="ml-6">
+          <div className="mx-7 flex items-center flex-wrap  cen">
+            <div className="mb-3">
+              <PlatformSelector
+                onSelectPlatform={(platform) =>
+                  setGameQuery({ ...gameQuery, platform })
+                }
+              />
+            </div>
+            <span className="ml-6 mb-3">
               <SortSelector
                 onSelectSort={(sortOrder) =>
                   setGameQuery({ ...gameQuery, sortOrder })

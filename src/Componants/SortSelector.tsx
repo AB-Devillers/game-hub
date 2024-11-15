@@ -7,7 +7,7 @@ const SortSelector = ({ onSelectSort }: props) => {
     <>
       <select
         onChange={(e) => onSelectSort(e.target.value)}
-        className="bg-blackish2 cursor-pointer text-white p-3 rounded custom-icon"
+        className="w-56 bg-blackish2 cursor-pointer text-white p-3 rounded custom-icon"
       >
         <option value="">Order by: Revelance</option>
         <option value="-added">Date Added</option>
