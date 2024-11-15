@@ -4,9 +4,10 @@ import GenreSkeleton from "./GenreSkeleton";
 
 interface props {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({ onSelectGenre }: props) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: props) => {
   const { data, error, loading } = useGenre();
   const genre = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
@@ -21,9 +22,12 @@ const GenreList = ({ onSelectGenre }: props) => {
               src={getCroppedImageUrl(genre.image_background)}
               alt="img"
             />
+
             <button
               onClick={() => onSelectGenre(genre)}
-              className="m-3 text-lg hover:underline"
+              className={`m-3 text-lg ${
+                genre.id === selectedGenre?.id ? "font-bold" : "font-normal"
+              }  hover:underline `}
             >
               {genre.name}
             </button>
