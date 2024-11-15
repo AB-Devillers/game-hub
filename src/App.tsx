@@ -10,6 +10,7 @@ import SortSelector from "./Componants/SortSelector";
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
+  sortOrder: string;
 }
 
 function App() {
@@ -34,7 +35,11 @@ function App() {
               }
             />
             <span className="ml-6">
-              <SortSelector />
+              <SortSelector
+                onSelectSort={(sortOrder) =>
+                  setGameQuery({ ...gameQuery, sortOrder })
+                }
+              />
             </span>
           </div>
           <GamesGrid gameQuery={gameQuery} />
